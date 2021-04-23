@@ -1,0 +1,42 @@
+.col-today {
+  color: #B62B5D;
+}
+
+.col-future {
+  color: #8F00A7;
+}
+
+.col-period {
+  color: #0043A7;
+}
+
+.col-success {
+  color: #0DA700;
+}
+.col-pause{
+  color: #A76400;
+}
+.task-option{
+  min-height: 30px;
+  font-size: 12pt;
+}
+.task-option span{
+  margin-left: 10px;
+}
+.task-option:hover{
+  background-color: #B62B5D;
+  cursor: pointer;
+  color: white;
+}
+
+.task-option mat-icon{
+  vertical-align: middle;
+}
+.task-option:hover mat-icon  {
+  color: white;
+}
+.full-width{
+  width: 100%;
+}
+
+
