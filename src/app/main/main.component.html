@@ -1,49 +1,82 @@
-<div fxFlex="0 1 100%">
-  <div fxFlex="0 1 25%">
-    <mat-expansion-panel expanded="true">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <b>Задачи</b>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="task-option">
-        <mat-icon>view_list</mat-icon>
-        <span>Все</span>
-      </div>
-      <div class="task-option">
-        <mat-icon class="col-today">today</mat-icon>
-        <span>Сегодня</span>
-      </div>
-      <div class="task-option">
-        <mat-icon class="col-future">pending_actions</mat-icon>
-        <span>Предстоящие</span>
-      </div>
-      <div class="task-option">
-        <mat-icon class="col-period">history</mat-icon>
-        <span>Переодические</span>
-      </div>
-      <div class="task-option">
-        <mat-icon class="col-success">event_available</mat-icon>
-        <span>Сделано</span>
-      </div>
-      <div class="task-option">
-        <mat-icon class="col-pause">pause_circle_filled</mat-icon>
-        <span>На паузе</span>
-      </div>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <b>Метки</b>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
+<div *ngIf="isLoad">
+  <div fxFlex="0 1 100%">
+    <div fxFlex="0 1 25%">
+      <mat-expansion-panel expanded="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>Задачи</b>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="task-option">
+          <mat-icon>view_list</mat-icon>
+          <span>Все</span>
+        </div>
+        <div class="task-option">
+          <mat-icon class="col-today">today</mat-icon>
+          <span>Сегодня</span>
+        </div>
+        <div class="task-option">
+          <mat-icon class="col-future">pending_actions</mat-icon>
+          <span>Предстоящие</span>
+        </div>
+        <div class="task-option">
+          <mat-icon class="col-period">history</mat-icon>
+          <span>Переодические</span>
+        </div>
+        <div class="task-option">
+          <mat-icon class="col-success">event_available</mat-icon>
+          <span>Сделано</span>
+        </div>
+        <div class="task-option">
+          <mat-icon class="col-pause">pause_circle_filled</mat-icon>
+          <span>На паузе</span>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>Метки</b>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel>
+    </div>
+    <div class="main" fxFlex="0 1 65%">
+      <ng-container *ngIf="!buttonStatus">
+        <button type="button" class="mat-raised-button mat-accent" (click)="addTask()">
+          <mat-icon>add</mat-icon>
+          Добавить задачу
+        </button>
+      </ng-container>
+      <ng-container *ngIf="buttonStatus">
+        <mat-form-field class="full-width m-a-10t" appearance="outline">
+          <mat-label>Добавить задачу</mat-label>
+          <textarea matInput></textarea>
+          <div class="icon">
+            <mat-icon class="v-a">edit</mat-icon>
+            Метки
+            <mat-icon class="v-a b-m">analytics</mat-icon>
+            Приоритет
+            <mat-icon class="v-a b-m">alarm</mat-icon>
+            Срок
+          </div>
+        </mat-form-field>
+        <button type="button" class="mat-raised-button mat-accent">
+          <mat-icon>add</mat-icon>
+          Добавить задачу
+        </button>
+        <button class='b-m' mat-button (click)="cancelTask()">Отмена</button>
+      </ng-container>
+      <ng-container *ngIf="testData">
+
+        <div *ngFor="let item of testData">
+          <mat-card class="m-a-10t">
+          {{item.text}}
+          </mat-card>
+        </div>
+
+      </ng-container>
+    </div>
   </div>
-  <div fxFlex="0 1 65%">
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Address 2</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
-  </div>
+
 </div>

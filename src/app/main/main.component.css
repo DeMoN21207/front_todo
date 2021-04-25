@@ -13,30 +13,65 @@
 .col-success {
   color: #0DA700;
 }
-.col-pause{
+
+.col-pause {
   color: #A76400;
 }
-.task-option{
+
+.task-option {
   min-height: 30px;
   font-size: 12pt;
 }
-.task-option span{
+
+.task-option span {
   margin-left: 10px;
 }
-.task-option:hover{
+
+.task-option:hover {
   background-color: #B62B5D;
   cursor: pointer;
   color: white;
 }
 
-.task-option mat-icon{
+.task-option mat-icon {
   vertical-align: middle;
 }
-.task-option:hover mat-icon  {
+
+.task-option:hover mat-icon {
   color: white;
 }
-.full-width{
+
+.full-width {
   width: 100%;
 }
 
+button .mat-icon {
+  vertical-align: middle;
+}
 
+.main {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.b-m {
+  margin-left: 15px;
+}
+
+.v-a {
+  vertical-align: middle;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.m-a-10t {
+  margin-top: 10px;
+}
+
+mat-card {
+  font-weight: bold;
+  font-size: 13pt;
+  text-align: left;
+}
